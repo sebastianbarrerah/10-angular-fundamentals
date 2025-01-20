@@ -1,7 +1,7 @@
 {
 
   // Apariencia del editor
-  "editor.fontSize": 16, // Tamaño de la fuente en el editor.
+  "editor.fontSize": 14, // Tamaño de la fuente en el editor.
   "editor.lineHeight": 22, // Altura de línea para mejor legibilidad.
   "editor.tabSize": 2, // Tamaño del tabulador, ideal para proyectos Angular.
   "editor.cursorStyle": "line", // Estilo del cursor (línea vertical).

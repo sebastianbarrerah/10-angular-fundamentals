@@ -1,43 +1,55 @@
- <section class="services">
-      <picture class="services__container" role="group" aria-label="Imagenes de servicios">
-        <img src="../../../public/images/carousel/Wiki-V2.webp" alt="imagen  de onboarding"
-          class="services__image services__image--wiki">
-        <img src="../../../public/images/carousel/Docs-V2.webp" alt="imagen de documentos"
-          class="services__image services__image--docs">
-        <img src="../../../public/images/carousel/Projects-V2.webp" alt="imagen de un projects"
-          class="services__image services__image--projects">
-        <img src="../../../public/images/carousel/AI-V2.webp" alt="imagen de inteligencia artificial"
-          class="services__image services__image--ai">
-        <img src="../../../public/images/carousel/calendar.webp" alt="imagen de un calendario de estudio"
-          class="services__image services__image--calendar">
-        <img src="../../../public/images/carousel/sites.webp" alt="imagen de sitio de diseño"
-          class="services__image services__image--sites">
-      </picture>
+<section class="services">
+  <picture
+    class="services__container"
+    role="group"
+    aria-label="Imagenes de servicios"
+  >
+    <img
+      src="../../../public/images/carousel/Wiki-V2.webp"
+      alt="imagen  de onboarding"
+      class="services__image services__image--wiki"
+    />
+    <img
+      src="../../../public/images/carousel/Docs-V2.webp"
+      alt="imagen de documentos"
+      class="services__image services__image--docs"
+    />
+    <img
+      src="../../../public/images/carousel/Projects-V2.webp"
+      alt="imagen de un projects"
+      class="services__image services__image--projects"
+    />
+    <img
+      src="../../../public/images/carousel/AI-V2.webp"
+      alt="imagen de inteligencia artificial"
+      class="services__image services__image--ai"
+    />
+    <img
+      src="../../../public/images/carousel/calendar.webp"
+      alt="imagen de un calendario de estudio"
+      class="services__image services__image--calendar"
+    />
+    <img
+      src="../../../public/images/carousel/sites.webp"
+      alt="imagen de sitio de diseño"
+      class="services__image services__image--sites"
+    />
+  </picture>
 
-      <div class="services__container-buttons" role="group" aria-label="Botones de servicios">
-        <button class="services__button" id="servicios-wiki">
-          <img src="../../../public/icon/wiki.PNG" alt="icono de wiki" class="service__icon">
-          Wikis
-        </button>
-        <button class="services__button" id="servicios-docs">
-          <img src="../../../public/icon/Doc.PNG" alt="icono de docs" class="service__icon">
-          Docs
-        </button>
-        <button class="services__button" id="servicios-projects">
-          <img src="../../../public/icon/project.svg" alt="icono de project" class="service__icon">
-          Projects
-        </button>
-        <button class="services__button" id="servicios-ai">
-          <img src="../../../public/icon/face.PNG" alt="icono de ai" class="service__icon">
-          Ai
-        </button>
-        <button class="services__button" id="servicios-calendar">
-          <img src="../../../public/icon/calendar.PNG" alt="icono de calendar" class="service__icon">
-          Calendar
-        </button>
-        <button class="services__button" id="servicios-sites">
-          <img src="../../../public/icon/sites.PNG" alt="icono de site" class="service__icon">
-          Sites
-        </button>
-      </div>
-    </section>
+  <div
+    class="services__container-buttons"
+    role="group"
+    aria-label="Botones de servicios"
+  >
+    @for (service of services; track service.id) {
+    <button class="services__button" [id]="service.id">
+      <img
+        [src]="service.icon"
+        [alt]="'icono de ' + service.name"
+        class="service__icon"
+      />
+      {{ service.name }}
+    </button>
+    }
+  </div>
+</section>
