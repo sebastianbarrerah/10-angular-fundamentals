@@ -1,0 +1,192 @@
+<header class="header">
+  <nav role="navigation" aria-label="menu navegacion">
+    <menu class="menu" aria-level="0" tabindex="1">
+      <li class="menu__item">
+        <a href="/" aria-label="Ir al inicio">
+          <i class="menu__logo" aria-hidden="true">
+            <img
+              src="../../../public/svg/notion.svg"
+              alt="logo de notion"
+              class="header__logo"
+            />
+          </i>
+        </a>
+      </li>
+
+      <li
+        class="menu__item menu__item--product"
+        aria-haspopup="true"
+        aria-expanded="false"
+        tabindex="0"
+      >
+        <span aria-label="Abrir menú de productos">Product</span>
+        <i aria-hidden="true">
+          <img
+            src="../../../public/icon/arrow-bottom.svg"
+            alt="icono de flecha hacia abajo"
+          />
+        </i>
+
+        <app-sub-menu [menuItems]="subMenu"></app-sub-menu>
+      </li>
+
+      <li
+        class="menu__item menu__item--dropdown"
+        id="menu-dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        tabindex="0"
+      >
+        <span aria-label="Abrir menú de equipos">Teams</span>
+        <i aria-hidden="true">
+          <img
+            src="../../../public/icon/arrow-bottom.svg"
+            alt="icono de flecha hacia abajo"
+          />
+        </i>
+      </li>
+
+      <li
+        class="menu__item"
+        aria-haspopup="true"
+        aria-expanded="false"
+        tabindex="0"
+      >
+        <span aria-label="Abrir menú de individuos">Individuals</span>
+        <i aria-hidden="true">
+          <img
+            src="../../../public/icon/arrow-bottom.svg"
+            alt="icono de flecha hacia abajo"
+          />
+        </i>
+      </li>
+
+      <li
+        class="menu__item"
+        aria-haspopup="true"
+        aria-expanded="false"
+        tabindex="0"
+      >
+        <span aria-label="Abrir menú de descarga">Download</span>
+        <i aria-hidden="true">
+          <img
+            src="../../../public/icon/arrow-bottom.svg"
+            alt="icono de flecha hacia abajo"
+          />
+        </i>
+      </li>
+
+      <li class="menu__item" tabindex="0">
+        <span aria-label="Abrir menú de precios">Pricing</span>
+      </li>
+
+      <div class="menu__item menu__item--separator">
+        <menu class="sub-menu" aria-label="Menú de opciones">
+          <li
+            class="menu__item menu__separator"
+            aria-label="Solicitar una demostración"
+            tabindex="0"
+          >
+            Request a demo
+          </li>
+          <li></li>
+          <li
+            class="menu__item menu__separator"
+            aria-label="Iniciar sesión"
+            tabindex="0"
+          >
+            Log in
+          </li>
+          <li
+            class="menu__item menu__separator"
+            aria-label="Obtener Notion gratis"
+            tabindex="0"
+            (click)="actionClick()"
+          >
+            Get Notion Free
+          </li>
+        </menu>
+      </div>
+    </menu>
+  </nav>
+
+  <section class="header__information" role="banner">
+    <div class="information">
+      @if(clicado == true){
+      <h1 class="information__title">el mejor espacio de trabajo</h1>
+      }@else{
+      <h1 class="information__title">The happier workspace</h1>
+      }
+
+      <h2 class="information__subtitle">
+        Write. Plan. Collaborate. With a little help from AI.
+      </h2>
+      <div
+        class="information__buttons-container"
+        role="group"
+        aria-label="Botones de información"
+      >
+        <button
+          class="information__button information__button--get"
+          aria-label="Obtener Notion gratis"
+        >
+          Get Notion free
+        </button>
+        <button
+          class="information__button information__button--demo"
+          aria-label="Solicitar una demostración"
+        >
+          Request a demo
+        </button>
+      </div>
+      <span class="information__teams">Trusted by teams at</span>
+      <div
+        class="information__logos"
+        role="group"
+        aria-label="Logos de equipos"
+      >
+        <img
+          src="../../../public/svg/headSpace.svg"
+          alt="logo de headSpace"
+          class="information__items"
+        />
+
+        <img
+          src="../../../public/svg/remote.svg"
+          alt="logo de remote"
+          class="information__items"
+        />
+
+        <img
+          src="../../../public/svg/password.svg"
+          alt="logo de password"
+          class="information__items"
+        />
+
+        <img
+          src="../../../public/svg/figma.svg"
+          alt="logo de figma"
+          class="information__items information__items--figma"
+        />
+      </div>
+    </div>
+
+    <div class="video-principal">
+      <video class="video-principal__video" autoplay muted loop>
+        <source src="../../../public/videos/hero-banner.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <app-sub-menu [menuItems]="menuDrow"></app-sub-menu>
+  <div class="dropdown">
+    <li class="dropdown__item">Product</li>
+    <li class="dropdown__item">Engineering</li>
+    <li class="dropdown__item">Design</li>
+    <li class="dropdown__item">Marketing</li>
+    <li class="dropdown__item">IT</li>
+    <li class="dropdown__item">Startups</li>
+    <li class="dropdown__item">Enterprise</li>
+    <li class="dropdown__item">Customer stories</li>
+  </div>
+</header>

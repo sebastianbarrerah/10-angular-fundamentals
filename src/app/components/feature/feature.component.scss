@@ -1,0 +1,44 @@
+@use '../../app/styles/mixins.scss' as mixins;
+@use '../../app/styles/variables.scss' as variables;
+
+ .features {
+   @include mixins.flex-style(column, nowrap, 40px);
+   margin-top: 200px;
+
+   &__title {
+     @include mixins.text-style(61px, 700, normal, 65px, -.02em);
+     color: variables.$black-light;
+   }
+
+   &__container {
+     @include mixins.size(100%, auto);
+     @include mixins.flex-style(row, wrap, 10px);
+     justify-content: space-between;
+   }
+
+   .feature__card {
+     @include mixins.size(20%, auto);
+     @include mixins.flex-style(column, nowrap, 10px);
+
+     & img {
+       @include mixins.size(90px, auto);
+     }
+
+     & video {
+       @include mixins.size(90px, auto);
+     }
+
+     .feature__link {
+       @include mixins.text-style(18px, 600, normal, 24px, -.02em);
+       @include mixins.flex-style(column, nowrap, 5px);
+       text-decoration: none;
+       color: variables.$color-footer-copyright;
+       margin-bottom: 15px;
+
+       & span {
+         @include mixins.text-style(26px, 700, normal, 29px, -.02em);
+         color: variables.$black-light;
+       }
+     }
+   }
+ }
