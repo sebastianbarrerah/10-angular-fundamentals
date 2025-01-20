@@ -1,88 +1,24 @@
 <section class="features" role="region" aria-label="Características">
-      <h4 class="features__title">
-        Everything you need <br /> to do your best work.
-      </h4>
-      <div class="features__container" role="group" aria-label="lista do características">
-
-        <div class="feature__card">
-          <figure>
-            <img src="../../../public/images/docsStacked.webp" alt="imagen de documentos">
-          </figure>
-          <a href="#" class="feature__link" aria-label="Explorar documentos">
-            <span class="feature__name">Docs →</span>
-            Build any page, <br /> communicate any idea.
-          </a>
-        </div>
-
-        <div class="feature__card">
-          <figure>
-            <img src="../../../public/images/bookFlat.webp" alt="imagen de libro">
-          </figure>
-          <a href="#" class="feature__link" aria-label="Explorar wiki">
-            <span class="feature__name">Wiki →</span>
-            One home base for all your knowledge.
-          </a>
-        </div>
-
-        <div class="feature__card">
-          <figure>
-            <img src="../../../public/images/target.webp" alt="imagen de proyecto">
-          </figure>
-          <a href="#" class="feature__link" aria-label="Explorar proyectos">
-            <span class="feature__name">Projects →</span>
-            Manage any project from beginning to end.
-          </a>
-        </div>
-
-        <div class="feature__card">
+  <h4 class="features__title">
+    Everything you need <br /> to do your best work.
+  </h4>
+  <div class="features__container" role="group" aria-label="lista de características">
+    @for (feature of features; track feature.name) {
+      <div class="feature__card">
+        @if (feature.video) {
           <video aria-label="Video de características">
-            <source src="../../../public/videos/everything-you-need-ai.mp4" type="video/mp4">
+            <source [src]="feature.video" type="video/mp4">
           </video>
-          <a href="#" class="feature__link" aria-label="Explorar Notion AI">
-            <span class="feature__name">Notion AI →</span>
-            Finds what you need. Does what you need.
-          </a>
-        </div>
-
-        <div class="feature__card">
+        } @else {
           <figure>
-            <img src="../../../public/images/notionCalendarLogo.webp" alt="imagen de calendario">
+            <img [src]="feature.image" [alt]="'imagen de ' + feature.name.toLowerCase()">
           </figure>
-          <a href="" class="feature__link" aria-label="Explorar calendario">
-            <span class="feature__name">Calendar →</span>
-            See all your commitments in one place.
-          </a>
-        </div>
-
-        <div class="feature__card">
-          <figure>
-            <img src="../../../public/images/trophy.webp" alt="imagen de logros">
-          </figure>
-          <a href="#" class="feature__link" aria-label="Explorar logros">
-            <span class="feature__name">Goals →</span>
-            Track progress toward <br />what's most important.
-          </a>
-        </div>
-
-        <div class="feature__card">
-          <figure>
-            <img src="../../../public/images/globe.webp" alt="imagen de sitios webs">
-          </figure>
-          <a href="#" class="feature__link" aria-label="Explorar sitios web">
-            <span class="feature__name">Sites →</span>
-            Make any page a website in minutes.
-          </a>
-        </div>
-
-        <div class="feature__card">
-          <figure>
-            <img src="../../../public/images/shapes1.webp" alt="imagen de plantillas">
-          </figure>
-          <a href="#" class="feature__link" aria-label="Explorar plantillas">
-            <span class="feature__name">Templates →</span>
-            Get started with one of 30,000+ templates.
-          </a>
-        </div>
-
+        }
+        <a href="#" class="feature__link" [attr.aria-label]="feature.ariaLabel">
+          <span class="feature__name">{{ feature.name }} →</span>
+          <span [innerHTML]="feature.description"></span>
+        </a>
       </div>
-    </section>
+    }
+  </div>
+</section>
