@@ -1,61 +1,26 @@
-  <section class="template" role="group" aria-label="Plantillas">
-      <h1 class="template__title" aria-label="Plantillas">Start with a template.<br /> Build anything.</h1>
-      <a href="#" class="template__link" aria-label="Explorar todas las plantillas">Browse all templates →</a>
-      <div class="template__container">
-        <div class="template__principal">
+<section class="template" role="group" aria-label="Plantillas">
+  <h1 class="template__title" aria-label="Plantillas">Start with a template.<br /> Build anything.</h1>
+  <a href="#" class="template__link" aria-label="Explorar todas las plantillas">Browse all templates →</a>
+  <div class="template__container">
+    <div class="template__principal">
+      <i aria-hidden="true">
+        <img src="../../../../public/icon/book.svg" alt="icono libro abierto" class="template__principal-icon">
+      </i>
+      <strong class="template__principal-title">Company Wiki →</strong>
+      <figure class="template__principal-figure">
+        <img src="../../../public/images/wiki-template.webp" alt="Wiki template" class="template__principal-image">
+      </figure>
+    </div>
+
+    <div class="template__content" role="group" aria-label="Contenido de la plantilla">
+      @for (card of cards; track card.title) {
+        <div class="template__card">
           <i aria-hidden="true">
-            <img src="../../../public/icon/book.svg" alt="icono libro abierto" class="template__icon">
+            <img [src]="card.icon" [alt]="card.alt" class="template__card-icon">
           </i>
-          <strong>Company Wiki →</strong>
-
-          <figure class="template__image">
-            <img src="../../../public/images/wiki-template.webp" alt="Wiki template" class="template__images">
-          </figure>
+          <strong class="template__card-title">{{ card.title }} →</strong>
         </div>
-
-        <div class="template__content" role="group" aria-label="Contenido de la plantilla">
-          <div class="template__card">
-            <i aria-hidden="true">
-              <img src="../../../public/icon/moto.svg" alt="icono de motocicleta">
-            </i>
-            <strong>Project Roadmap →</strong>
-          </div>
-
-          <div class="template__card">
-            <i aria-hidden="true">
-              <img src="../../../public/icon/table.svg" alt="icono de tablero">
-            </i>
-            <strong>OKRs →</strong>
-          </div>
-
-          <div class="template__card">
-            <i aria-hidden="true">
-              <img src="../../../public/icon/docYellow.svg" alt="icono de documento">
-            </i>
-            <strong>Meeting Notes →</strong>
-          </div>
-
-          <div class="template__card">
-            <i aria-hidden="true">
-              <img src="../../../public/icon/vacation.svg" alt="icono de vacaciones">
-            </i>
-            <strong>Vacation Planner →</strong>
-          </div>
-
-          <div class="template__card">
-            <i aria-hidden="true">
-              <img src="../../../public/icon/calendarGreen.svg" alt="icono de calendario">
-            </i>
-            <strong>Editorial Calendar →</strong>
-          </div>
-
-          <div class="template__card">
-            <i aria-hidden="true">
-              <img src="../../../public/icon/check.svg" alt="icono de verificación">
-            </i>
-            <strong>Habit Tracker →</strong>
-          </div>
-
-        </div>
-      </div>
-    </section>
+      }
+    </div>
+  </div>
+</section>

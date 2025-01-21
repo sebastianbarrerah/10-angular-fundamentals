@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
-import { Feature } from '../../interfaces/feature';
+import { CommonModule } from '@angular/common';
+
+interface Feature {
+  image: string;
+  video?: string;
+  name: string;
+  description: string;
+  ariaLabel: string;
+}
 
 @Component({
   selector: 'app-feature',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './feature.component.html',
-  styleUrl: './feature.component.scss',
+  styleUrls: ['./feature.component.scss'],
 })
 export class FeatureComponent {
   features: Feature[] = [
@@ -32,7 +41,7 @@ export class FeatureComponent {
       name: 'Notion AI',
       description: 'Finds what you need. Does what you need.',
       ariaLabel: 'Explorar Notion AI',
-      image: ''
+      image: '',
     },
     {
       image: '../../../public/images/notionCalendarLogo.webp',
@@ -53,7 +62,7 @@ export class FeatureComponent {
       ariaLabel: 'Explorar sitios web',
     },
     {
-      image: '../../../public/images/shapes1.webp',
+      image: './../../public/images/shapes1.webp',
       name: 'Templates',
       description: 'Get started with one of 30,000+ templates.',
       ariaLabel: 'Explorar plantillas',
