@@ -15,6 +15,29 @@ export class HeaderComponent {
     this.clicado = true;
   }
 
+   iconsHeader = [
+  {
+    src: '../../../public/svg/headSpace.svg',
+    alt: 'logo de headSpace',
+    class: 'information__items',
+  },
+  {
+    src: '../../../public/svg/remote.svg',
+    alt: 'logo de remote',
+    class: 'information__items',
+  },
+  {
+    src: '../../../public/svg/password.svg',
+    alt: 'logo de password',
+    class: 'information__items',
+  },
+  {
+    src: '../../../public/svg/figma.svg',
+    alt: 'logo de figma',
+    class: 'information__items information__items--figma',
+  }
+]
+
   subMenu = [
     { label: 'Product' },
     { label: 'Engineering' },
@@ -37,3 +60,29 @@ export class HeaderComponent {
     { label: 'Customer stories' },
   ];
 }
+
+
+
+  // <img
+  //         src="../../../public/svg/headSpace.svg"
+  //         alt="logo de headSpace"
+  //         class="information__items"
+  //       />
+
+  //       <img
+  //         src="../../../public/svg/remote.svg"
+  //         alt="logo de remote"
+  //         class="information__items"
+  //       />
+
+  //       <img
+  //         src="../../../public/svg/password.svg"
+  //         alt="logo de password"
+  //         class="information__items"
+  //       />
+
+  //       <img
+  //         src="../../../public/svg/figma.svg"
+  //         alt="logo de figma"
+  //         class="information__items information__items--figma"
+  //       />

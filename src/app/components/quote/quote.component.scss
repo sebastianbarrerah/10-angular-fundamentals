@@ -1,5 +1,5 @@
- @use '../../app/styles/mixins.scss' as mixins;
- @use '../../app/styles/variables.scss' as variables;
+@use '../../styles/mixins.scss' as mixins;
+@use '../../styles/variables.scss' as variables;
 
  .quote {
    @include mixins.flex-style(column);

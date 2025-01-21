@@ -1,4 +1,3 @@
-@use './variables.scss' as variables;
 
 @mixin text-style ($font-size, $font-weight, $font-style, $line-height: normal, $letter-spacing: normal) {
   font-size: $font-size;

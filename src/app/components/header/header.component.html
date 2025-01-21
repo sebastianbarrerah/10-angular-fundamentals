@@ -27,7 +27,7 @@
           />
         </i>
 
-        <app-sub-menu [menuItems]="subMenu"></app-sub-menu>
+        <!-- <app-sub-menu [menuItems]="subMenu"></app-sub-menu> -->
       </li>
 
       <li
@@ -145,29 +145,10 @@
         role="group"
         aria-label="Logos de equipos"
       >
-        <img
-          src="../../../public/svg/headSpace.svg"
-          alt="logo de headSpace"
-          class="information__items"
-        />
-
-        <img
-          src="../../../public/svg/remote.svg"
-          alt="logo de remote"
-          class="information__items"
-        />
-
-        <img
-          src="../../../public/svg/password.svg"
-          alt="logo de password"
-          class="information__items"
-        />
-
-        <img
-          src="../../../public/svg/figma.svg"
-          alt="logo de figma"
-          class="information__items information__items--figma"
-        />
+      <!-- aqui -->
+       @for(imagen of iconsHeader; track $index){
+         <img [src]="iconsHeader[$index].src" [alt]="iconsHeader[$index].alt" [class]="iconsHeader[$index].class">
+       }
       </div>
     </div>
 

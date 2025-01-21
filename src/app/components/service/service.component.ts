@@ -36,7 +36,7 @@ export class ServiceComponent {
     },
   ];
 
-  imagenes:Iimagenes[] = [
+  imagenes = [
     {
       src: '../../../public/images/carousel/Wiki-V2.webp',
       alt: 'imagen de onboarding',

@@ -1,6 +1,8 @@
 
-@use '../../styles.scss' as mixins;
-@use '../../styles.scss' as variables;
+@use '../../styles/mixins.scss' as mixins;
+@use '../../styles/variables.scss' as variables;
+
+
 
 .footer {
   @include mixins.size(100%, auto);
