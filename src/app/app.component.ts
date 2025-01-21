@@ -6,6 +6,7 @@ import { StartedComponent } from './components/started/started.component';
 import { TemplateComponent } from './components/template/template.component';
 import { ToolsComponent } from './components/tools/tools.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FeatureComponent } from "./components/feature/feature.component";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
     TemplateComponent,
     ToolsComponent,
     FooterComponent,
-  ],
+    FeatureComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

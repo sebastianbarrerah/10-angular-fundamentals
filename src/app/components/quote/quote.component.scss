@@ -9,7 +9,8 @@
    margin: auto;
    transform: rotate(-3deg);
    position: relative;
-   margin: 130px auto;
+   margin: auto;
+   bottom: 94rem;
 
    &__image {
      @include mixins.position(absolute, auto, auto, 80%, 45%);

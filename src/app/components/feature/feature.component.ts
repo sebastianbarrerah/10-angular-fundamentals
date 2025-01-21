@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Feature } from '../../interfaces/feature';
 
 @Component({
   selector: 'app-feature',
