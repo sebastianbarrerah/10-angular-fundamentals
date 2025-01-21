@@ -18,7 +18,6 @@
     margin-top: 35rem;
   }
 
-  // General Tools
   &__general {
     @include mixins.size(50%, auto);
 
@@ -85,7 +84,7 @@
     justify-content: center;
     color: variables.$color-subtitle;
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 23px;
 
     &-title {
       color: variables.$black-light;
@@ -102,7 +101,7 @@
     }
   }
 
-  &--brain {
+  &-brain {
     margin: 200px auto;
   }
 }

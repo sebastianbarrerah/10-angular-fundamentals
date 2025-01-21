@@ -5,8 +5,7 @@
 
 
 .footer {
-  @include mixins.size(100%, auto);
-  @include mixins.position(absolute, 555rem, auto, auto, 0);
+  @include mixins.size(70%, auto);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 50px;

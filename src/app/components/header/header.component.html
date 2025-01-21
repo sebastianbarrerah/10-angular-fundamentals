@@ -1,66 +1,54 @@
 <header class="header">
-  <nav role="navigation" aria-label="menu navegacion">
-    <menu class="menu" aria-level="0" tabindex="1">
+  <nav class="header__nav" role="navigation" aria-label="menu navegacion">
+    <menu class="header__menu" aria-level="0" tabindex="1">
       @for (option of menuItems; track option.label) {
-      <li
-        [class]="option.className"
-        [attr.aria-haspopup]="option.hasDropdown"
-        [attr.aria-expanded]="option.hasDropdown ? 'false' : null"
-        tabindex="0"
-      >
-        @if (option.href) {
-        <a [href]="option.href" [attr.aria-label]="option.label">
-          <i class="menu__logo" aria-hidden="true">
-            <img
-              [src]="option.icon"
-              [alt]="option.iconAlt"
-              class="header__logo"
-            />
-          </i>
-        </a>
-        } @else {
-        <span
-          [attr.aria-label]="'Abrir menú de ' + option.label.toLowerCase()"
-          >{{ option.label }}</span
-        >
-        @if (option.icon) {
-        <i aria-hidden="true">
-          <img [src]="option.icon" [alt]="option.iconAlt" />
-        </i>
-        } }
-      </li>
+        <li class="header__menu-item"
+            [class.header__menu-item--has-dropdown]="option.hasDropdown"
+            [attr.aria-haspopup]="option.hasDropdown"
+            [attr.aria-expanded]="option.hasDropdown ? 'false' : null"
+            tabindex="0">
+          @if (option.href) {
+            <a class="header__menu-link" [href]="option.href" [attr.aria-label]="option.label">
+              @if (option.icon) {
+                <i class="header__menu-icon" aria-hidden="true">
+                  <img [src]="option.icon" [alt]="option.iconAlt" class="header__logo">
+                </i>
+              }
+            </a>
+          } @else {
+            <span class="header__menu-text" [attr.aria-label]="option.label">
+              {{ option.label }}
+            </span>
+            @if (option.icon) {
+              <i class="header__menu-icon" aria-hidden="true">
+                <img [src]="option.icon" [alt]="option.iconAlt">
+              </i>
+            }
+          }
+        </li>
       }
 
-      <div class="menu__item menu__item--separator">
-        <menu class="sub-menu" aria-label="Menú de opciones">
-          @for (option of menuSeparator; track option.label; let secundary =
-          $index) {
-          <li
-            class="menu__item menu__separator"
-            [attr.aria-label]=""
-            tabindex="0"
-          >
-            {{ option.label }}
-          </li>
-          @if (secundary == 0) {
-          <li></li>
-          } }
+      <div class="header__menu-separator">
+        <menu class="header__submenu" aria-label="Menú de opciones">
+          @for (option of menuSeparator; track option.label; let secondary = $index) {
+            <li class="header__submenu-item" [attr.aria-label]="" tabindex="0">
+              {{ option.label }}
+            </li>
+            @if (secondary == 0) {
+              <li class="header__submenu-separator"></li>
+            }
+          }
         </menu>
       </div>
     </menu>
   </nav>
-  <!-- aquiii-->
+  <app-sub-menu [menuItems]="menuItems"></app-sub-menu>
+  <!-- Aquíiii -->
   <app-banner></app-banner>
 
-  <!-- <app-sub-menu [menuItems]="menuDrow"></app-sub-menu> -->
-  <div class="dropdown">
-    <li class="dropdown__item">Product</li>
-    <li class="dropdown__item">Engineering</li>
-    <li class="dropdown__item">Design</li>
-    <li class="dropdown__item">Marketing</li>
-    <li class="dropdown__item">IT</li>
-    <li class="dropdown__item">Startups</li>
-    <li class="dropdown__item">Enterprise</li>
-    <li class="dropdown__item">Customer stories</li>
+  <div class="header__dropdown">
+    @for (item of dropdownItems; track item) {
+      <li class="header__dropdown-item">{{ item }}</li>
+    }
   </div>
 </header>

@@ -1,6 +1,9 @@
 @use '../../app/styles/mixins.scss' as mixins;
 @use '../../app/styles/variables.scss' as variables;
 
+.sub-menu{
+  display: none;
+}
 .menu-alternativo {
   @include mixins.flex-style(row, nowrap, 10px);
   @include mixins.size(38rem, auto);

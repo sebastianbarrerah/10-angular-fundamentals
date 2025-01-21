@@ -1,32 +1,37 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IconHeader } from '../interfaces/headersIcons';
+
+
 
 @Component({
   selector: 'app-banner',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './banner.component.html',
-  styleUrl: './banner.component.scss',
+  styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent {
-  iconsHeader = [
+  iconsHeader: IconHeader[] = [
     {
       src: '../../../public/svg/headSpace.svg',
       alt: 'logo de headSpace',
-      class: 'information__items',
+      class: 'banner__logo',
     },
     {
       src: '../../../public/svg/remote.svg',
       alt: 'logo de remote',
-      class: 'information__items',
+      class: 'banner__logo',
     },
     {
       src: '../../../public/svg/password.svg',
       alt: 'logo de password',
-      class: 'information__items',
+      class: 'banner__logo',
     },
     {
       src: '../../../public/svg/figma.svg',
       alt: 'logo de figma',
-      class: 'information__items information__items--figma',
+      class: 'banner__logo banner__logo--figma',
     },
   ];
 }
