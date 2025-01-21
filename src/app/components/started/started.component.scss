@@ -5,6 +5,8 @@
   @include mixins.flex-style(row, wrap);
   margin-top: 200px;
   justify-content: space-between;
+  width: variables.$size-vh;
+  margin: auto;
 
   &__title {
     @include mixins.text-style(61px, 700, normal, 65px, -.02em);
@@ -14,7 +16,7 @@
   }
 
   &__cards {
-    @include mixins.size(49%, auto);
+    @include mixins.size(45%, auto);
     @include mixins.flex-style(column, nowrap, 10px);
     background-color: variables.$color-card-started;
     border-radius: 12px;
