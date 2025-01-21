@@ -1,50 +1,73 @@
 @use '../../styles/mixins.scss' as mixins;
 @use '../../styles/variables.scss' as variables;
-@use '../../styles/herencia.scss';
+
 .services {
-  @include mixins.size(100%, 100%);
   @include mixins.flex-style(column, nowrap, 20px);
   margin-top: 35px;
+  width: variables.$size-vh;
+  margin: 50px auto;
 
   &__container {
     @include mixins.size(100%, auto);
     position: relative;
+    display: block;
+    border-radius: 12px;
+  }
 
-    .services__image {
-      @include mixins.size(100%, auto);
-      @include mixins.position(absolute, 0, auto, auto, 0);
-      object-fit: cover;
+  &__image {
+    @include mixins.size(100%, auto);
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 12px;
+    border: 1px solid variables.$color-border-image;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+
+    &--active {
       opacity: 1;
-      transition: opacity 0.25s ease-in-out;
-      border-radius: 12px;
-      border: 1px solid variables.$color-border-image;
-      box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+      z-index: 1;
     }
-
   }
 
-  &__container-buttons {
-    @include mixins.position(relative, 83%, auto, auto, auto);
+  &__buttons {
+    @include mixins.position(relative, 50rem, auto, auto, auto);
     @include mixins.flex-style(row, nowrap, 8px);
-    @extend %centers;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 5;
 
-    .services__button {
-      @include mixins.text-style(16px, 550, normal, 23px, -.02em);
-      @include mixins.flex-style(row, nowrap, 4px);
-      @extend %buttons;
+  }
 
-      .service__icon {
-        @include mixins.size(22px, 22px);
-        object-fit: contain;
-      }
+  &__button {
+    @include mixins.text-style(16px, 550, normal, 23px, -.02em);
+    @include mixins.flex-style(row, nowrap, 4px);
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid variables.$color-border-image;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 
-      &:hover {
-        background-color: variables.$hover-header;
-      }
+    &:hover {
+      background-color: variables.$hover-header;
+    }
+
+    &--active {
+      background-color: variables.$hover-header;
+      border-color: variables.$primary-color;
     }
   }
-}
 
-.active {
-  z-index: 1;
+  &__button-icon {
+    @include mixins.size(22px, 22px);
+    object-fit: contain;
+  }
+
+  &__button-text {
+    margin-left: 4px;
+  }
 }

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { SubMenuComponent } from '../../sub-menu/sub-menu.component';
+// import { SubMenuComponent } from '../../sub-menu/sub-menu.component';
+import { ImenuItem } from '../../interfaces/menuItems';
+import { BannerComponent } from '../../banner/banner.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [SubMenuComponent],
+  imports: [ BannerComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -15,74 +17,58 @@ export class HeaderComponent {
     this.clicado = true;
   }
 
-   iconsHeader = [
-  {
-    src: '../../../public/svg/headSpace.svg',
-    alt: 'logo de headSpace',
-    class: 'information__items',
-  },
-  {
-    src: '../../../public/svg/remote.svg',
-    alt: 'logo de remote',
-    class: 'information__items',
-  },
-  {
-    src: '../../../public/svg/password.svg',
-    alt: 'logo de password',
-    class: 'information__items',
-  },
-  {
-    src: '../../../public/svg/figma.svg',
-    alt: 'logo de figma',
-    class: 'information__items information__items--figma',
-  }
-]
-
-  subMenu = [
-    { label: 'Product' },
-    { label: 'Engineering' },
-    { label: 'Design' },
-    { label: 'Marketing' },
-    { label: 'IT' },
-    { label: 'Startups' },
-    { label: 'Enterprise' },
-    { label: 'Customer stories' },
+  menuItems: ImenuItem[] = [
+    {
+      href: '/',
+      label: 'Ir al inicio',
+      icon: '../../../public/svg/notion.svg',
+      iconAlt: 'logo de notion',
+      className: 'menu__item',
+    },
+    {
+      label: 'Product',
+      icon: '../../../public/icon/arrow-bottom.svg',
+      iconAlt: 'icono de flecha hacia abajo',
+      hasDropdown: true,
+      className: 'menu__item menu__item--product',
+    },
+    {
+      label: 'Teams',
+      icon: '../../../public/icon/arrow-bottom.svg',
+      iconAlt: 'icono de flecha hacia abajo',
+      hasDropdown: true,
+      className: 'menu__item menu__item--dropdown',
+    },
+    {
+      label: 'Individuals',
+      icon: '../../../public/icon/arrow-bottom.svg',
+      iconAlt: 'icono de flecha hacia abajo',
+      hasDropdown: true,
+      className: 'menu__item',
+    },
+    {
+      label: 'Download',
+      icon: '../../../public/icon/arrow-bottom.svg',
+      iconAlt: 'icono de flecha hacia abajo',
+      hasDropdown: true,
+      className: 'menu__item',
+    },
+    {
+      label: 'Pricing',
+      className: 'menu__item',
+    },
   ];
 
-  menuDrow = [
-    { label: 'Product' },
-    { label: 'Engineering' },
-    { label: 'Design' },
-    { label: 'Marketing' },
-    { label: 'IT' },
-    { label: 'Startups' },
-    { label: 'Enterprise' },
-    { label: 'Customer stories' },
+  menuSeparator: ImenuItem[] = [
+    {
+      label: 'Request a demo',
+    },
+    {
+      label: 'Log in',
+    },
+    {
+      label: 'Get Notion Free',
+    },
   ];
+
 }
-
-
-
-  // <img
-  //         src="../../../public/svg/headSpace.svg"
-  //         alt="logo de headSpace"
-  //         class="information__items"
-  //       />
-
-  //       <img
-  //         src="../../../public/svg/remote.svg"
-  //         alt="logo de remote"
-  //         class="information__items"
-  //       />
-
-  //       <img
-  //         src="../../../public/svg/password.svg"
-  //         alt="logo de password"
-  //         class="information__items"
-  //       />
-
-  //       <img
-  //         src="../../../public/svg/figma.svg"
-  //         alt="logo de figma"
-  //         class="information__items information__items--figma"
-  //       />

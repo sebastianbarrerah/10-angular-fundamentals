@@ -1,4 +1,4 @@
-interface Feature {
+export interface Feature {
   image: string;
   video?: string;
   name: string;

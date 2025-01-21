@@ -1,242 +1,67 @@
-<section class="tools" role="region" aria-label="Herramientas">
-      <div class="general-tools">
-        <h1 class="general-tools__title">Build perfect docs, together.</h1>
-        <span class="general-tools__subtitle">
-          Capture your ideas, get feedback from teammates, and ask AI to add the finishing touches.
-        </span>
-        <a href="#" class="general-tools__link" aria-label="Explorar documentos y notas">
-          Explore docs & notes→
-        </a>
-      </div>
+@for (section of sections(); track section.generalTools.title; let index =
+$index) {
 
-      <div class="tools-interactive" role="group" aria-label="Herramientas interactivas">
-        <div class="tools-interactive__info" role="group" aria-label="Información de herramientas interactivas">
-          <video class="tools-interactive__video" autoplay muted loop aria-label="Video de herramientas interactivas">
-            <source src="../../../public/videos/write-building-blocks.mp4" type="video/mp4">
-          </video>
-          <h4 class="tools-interactive__tile">Building blocks</h4>
-          <p class="tools-interactive__description">100+ content types to communicate any idea.</p>
-        </div>
+<section
+  class="tools"
+  [class.tools--inicial]="index === 0"
+  [class.tools--ultimo]="index === 3"
+  role="region"
+  aria-label="Herramientas"
+>
+  <div class="tools__general">
+    <h1 class="tools__general-title">{{ section.generalTools.title }}</h1>
+    <span class="tools__general-subtitle">
+      {{ section.generalTools.subtitle }}
+    </span>
+    <a
+      [href]="section.generalTools.link.href"
+      class="tools__general-link"
+      [attr.aria-label]="section.generalTools.link.ariaLabel"
+    >
+      {{ section.generalTools.link.text }}→
+    </a>
+  </div>
 
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/write-collaboration.mp4" type="video/mp4">
-          </video>
-          <h4 class="tools-interactive__tile">Collaborative tools</h4>
-          <p class="tools-interactive__description">Built for teams to share, suggest, and comment.</p>
-        </div>
+  <div
+    class="tools__interactive"
+    role="group"
+    aria-label="Herramientas interactivas"
+  >
+    @for (item of section.interactive.items; track item.title) {
+    <div class="tools__interactive-card">
+      <video class="tools__interactive-video" autoplay muted loop>
+        <source [src]="item.video" type="video/mp4" />
+      </video>
+      <h4 class="tools__interactive-title">{{ item.title }}</h4>
+      <p class="tools__interactive-description">{{ item.description }}</p>
+    </div>
+    }
+  </div>
 
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/write-ai.mp4" type="video/mp4">
-          </video>
-          <h4 class="tools-interactive__tile">AI-assisted</h4>
-          <p class="tools-interactive__description">Edit, draft, translate. Ask and AI will help.</p>
-        </div>
-      </div>
+  <div
+    class="tools__multimedia"
+    role="group"
+    aria-label="Multimedia de herramientas"
+  >
+    <video>
+      <source [src]="section.multimedia.video" type="video/mp4" />
+    </video>
+  </div>
 
-      <div class="tools__multimedia" role="group" aria-label="Multimedia de herramientas" tabindex="">
-        <video>
-          <source src="../../../public/videos/write-screen-desktop.mp4" type="video/mp4"
-            aria-label="Video de multimedia de herramientas">
-        </video>
-      </div>
-
-      <div class="tools__competitors" role="group" aria-label="Marcas con herramientas similares">
-        <h4 class="competitors__title">Replaces</h4>
-        <i><img src="../../../public/icon/evernote.svg" alt="logo de evernote" class="competitors__logo">
-          <span class="competitors__name">Evernote</span>
-        </i>
-
-        <i><img src="../../../public/icon/googleDoc.svg" alt="logo de google docs" class="competitors__logo">
-          <span class="competitors__name">Google Docs</span>
-        </i>
-
-        <i><img src="../../../public/icon/coda.svg" alt="logo de coda" class="competitors__logo">
-          <span class="competitors__name">Coda</span>
-        </i>
-      </div>
-    </section>
-
-    <section class="tools" role="region" aria-label="Herramientas">
-      <div class="general-tools">
-        <h1 class="general-tools__title" aria-label="Herramientas">Your workflow. Your way.</h1>
-        <span class="general-tools__subtitle">
-          All your projects, goals, calendars, roadmaps, and more—in one tool—personalized to how you and your team
-          work.
-        </span>
-        <a href="#" class="general-tools__link" aria-label="Explorar proyectos">
-          Explore projects →
-        </a>
-      </div>
-
-      <div class="tools-interactive" role="group" aria-label="Herramientas de producto">
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video" aria-label="Video de herramientas de producto">
-            <source src="../../../public/videos/plan-todos.mp4" type="video/mp4">
-          </video>
-          <h4 class="tools-interactive__tile">Tasks and to-dos</h4>
-          <p class="tools-interactive__description">Tackle any project, big or small.</p>
-        </div>
-
-        <div class="tools-interactive__info" role="group" aria-label="Información de herramientas de producto">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/plan-customizable.mp4" type="video/mp4"
-              aria-label="Video de herramientas de producto">
-          </video>
-          <h4 class="tools-interactive__tile">Custom views</h4>
-          <p class="tools-interactive__description">Visualize work in any format, from calendars to boards.</p>
-        </div>
-
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/plan-automations.mp4" type="video/mp4"
-              aria-label="Video de herramientas de producto">
-          </video>
-          <h4 class="tools-interactive__tile">Automations</h4>
-          <p class="tools-interactive__description">Put tedious tasks on autopilot.</p>
-        </div>
-      </div>
-
-      <div class="tools__multimedia">
-        <video>
-          <source src="../../../public/videos/plan-screen-desktop.mp4" type="video/mp4"
-            aria-label="Video de multimedia de herramientas">
-        </video>
-      </div>
-
-
-      <div class="tools__competitors" role="group" aria-label="Marcas con herramientas similares">
-        <h4 class="competitors__title">Replaces</h4>
-        <i><img src="../../../public/icon/trello.svg" alt="logo de notion" aria-label="Logo de trello"
-            class="competitors__logo">
-          <span class="competitors__name">Trello</span>
-        </i>
-
-        <i><img src="../../../public/icon/asana.svg" alt="logo de notion" aria-label="Logo de asana" class="competitors__logo">
-          <span class="competitors__name">Asana</span>
-        </i>
-
-        <i><img src="../../../public/icon/monday.svg" alt="logo de notion" aria-label="Logo de monday"
-            class="competitors__logo">
-          <span class="competitors__name">Monday</span>
-        </i>
-      </div>
-    </section>
-
-    <section class="tools">
-      <div class="general-tools">
-        <h1 class="general-tools__title">Find everything. Instantly.</h1>
-        <span class="general-tools__subtitle">
-          No more endless searching. Our built-in AI finds what you're looking for, whether its stored in Notion or one
-          of your other apps.
-        </span>
-        <a href="" class="general-tools__link">
-          Explore knowledge management→
-        </a>
-      </div>
-
-      <div class="tools-interactive">
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/organize-teamspaces.mp4" type="video/mp4"
-              aria-label="Video de herramientas de producto">
-          </video>
-          <h4 class="tools-interactive__tile">Teamspaces</h4>
-          <p class="tools-interactive__description">Dedicated spaces for every team & project.</p>
-        </div>
-
-
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/organize-integrations.mp4" type="video/mp4"
-              aria-label="Video de herramientas de producto">
-          </video>
-          <h4 class="tools-interactive__tile">Integrations</h4>
-          <p class="tools-interactive__description">Connected to all your other tools.</p>
-        </div>
-
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/organize-ai.mp4" type="video/mp4" aria-label="Video de herramientas">
-          </video>
-          <h4 class="tools-interactive__tile">Just ask AI</h4>
-          <p class="tools-interactive__description">Trusted answers across your apps.</p>
-        </div>
-      </div>
-
-
-      <div class="tools__multimedia" role="group" aria-label="Multimedia de herramientas">
-        <video aria-label="Video de multimedia de herramientas">
-          <source src="../../../public/videos/organize-screen-desktop.mp4" type="video/mp4">
-        </video>
-      </div>
-
-
-      <div class="tools__competitors" role="group" aria-label="Marcas con herramientas similares">
-        <h4 class="competitors__title">Replaces</h4>
-        <i><img src="../../../public/icon/confluence.webp" alt="logo de notion" aria-label="Logo de Figma"
-            class="competitors__logo">
-          <span class="competitors__name">Confluence</span>
-        </i>
-
-        <i><img src="../../../public/icon/sharepoint.webp" alt="logo de notion" aria-label="Logo de Figma"
-            class="competitors__logo">
-          <span class="competitors__name">SharePoint</span>
-        </i>
-
-        <i><img src="../../../public/icon/drive.svg" alt="logo de notion" aria-label="Logo de Figma" class="competitors__logo">
-          <span class="competitors__name">Google Drive</span>
-        </i>
-      </div>
-    </section>
-
-
-     <section class="tools tools-general-brain" role="region" aria-label="Herramientas">
-      <div class="general-tools">
-        <h1 class="general-tools__title" aria-label="Herramientas Notio AI">Get a brain boost.</h1>
-        <span class="general-tools__subtitle">
-          Built right into your workspace, Notion AI is ready to brainstorm, summarize, help you write, and find what
-          you’re looking for.
-        </span>
-        <a href="#" class="general-tools__link" aria-label="Prueba Notion AI">
-          Try Notion AI→
-        </a>
-      </div>
-
-      <div class="tools-interactive">
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/ai-answers.mp4" type="video/mp4"
-              aria-label="Video de herramientas de notio AI">
-          </video>
-          <h4 class="tools-interactive__tile">Instant answers</h4>
-          <p class="tools-interactive__description">Ask any question about a team’s docs and projects.</p>
-        </div>
-
-
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video" aria-label="Video de herramientas de notio AI">
-            <source src="../../../public/videos/ai-editor.mp4" type="video/mp4">
-          </video>
-          <h4 class="tools-interactive__tile">Personalized editor</h4>
-          <p class="tools-interactive__description">Generate content that's always relevant.</p>
-        </div>
-
-
-        <div class="tools-interactive__info">
-          <video class="tools-interactive__video">
-            <source src="../../../public/videos/ai-connectors.mp4" type="video/mp4">
-          </video>
-          <h4 class="tools-interactive__tile">AI connectors beta</h4>
-          <p class="tools-interactive__description">Access info from Slack, Google Drive and more, right inside Notion.
-          </p>
-        </div>
-      </div>
-
-      <div class="tools__multimedia">
-        <video>
-          <source src="../../../public/videos/ai-screen-desktop.mp4" type="video/mp4">
-        </video>
-      </div>
-    </section>
+  @if (section.competitors) {
+  <div
+    class="tools__competitors"
+    role="group"
+    aria-label="Marcas con herramientas similares"
+  >
+    <h4 class="tools__competitors-title">Replaces</h4>
+    @for (logo of section.competitors.logos; track logo.name) {
+    <div class="tools__competitors-item">
+      <img [src]="logo.src" [alt]="logo.alt" class="tools__competitors-logo" />
+      <span class="tools__competitors-name">{{ logo.name }}</span>
+    </div>
+    }
+  </div>
+  }
+</section>
+}
