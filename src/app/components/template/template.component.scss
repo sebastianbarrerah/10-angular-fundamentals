@@ -8,7 +8,7 @@
   width: variables.$size-vh;
   margin: auto;
   position: absolute;
-  top: 438rem;
+  top: 410rem;
   margin-left: 20rem;
   &__title {
     @include mixins.text-style(61px, 700, normal, 65px, -.02em);
